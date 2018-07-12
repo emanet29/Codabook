@@ -13,6 +13,7 @@
 		4C25BDDC20F789CC003FEE0F /* ProfilController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C25BDDB20F789CC003FEE0F /* ProfilController.swift */; };
 		4C25BDDE20F789F0003FEE0F /* FilController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C25BDDD20F789F0003FEE0F /* FilController.swift */; };
 		4C25BDE020F78A65003FEE0F /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C25BDDF20F78A65003FEE0F /* TabBar.swift */; };
+		4C25BDE220F79C95003FEE0F /* Utilisateur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C25BDE120F79C95003FEE0F /* Utilisateur.swift */; };
 		4C61214720ED5BAF0089B4E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61214620ED5BAF0089B4E8 /* AppDelegate.swift */; };
 		4C61214C20ED5BAF0089B4E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C61214A20ED5BAF0089B4E8 /* Main.storyboard */; };
 		4C61214E20ED5BB00089B4E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C61214D20ED5BB00089B4E8 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		4C25BDDB20F789CC003FEE0F /* ProfilController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilController.swift; sourceTree = "<group>"; };
 		4C25BDDD20F789F0003FEE0F /* FilController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilController.swift; sourceTree = "<group>"; };
 		4C25BDDF20F78A65003FEE0F /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		4C25BDE120F79C95003FEE0F /* Utilisateur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilisateur.swift; sourceTree = "<group>"; };
 		4C61214320ED5BAF0089B4E8 /* CodaBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodaBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C61214620ED5BAF0089B4E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C61214B20ED5BAF0089B4E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				4C25BDD420F63EA9003FEE0F /* Alerte.swift */,
+				4C25BDE120F79C95003FEE0F /* Utilisateur.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				4C8F307C20ED677300D28E14 /* Constantes.swift in Sources */,
 				4C8F307720ED658200D28E14 /* ConnectionController.swift in Sources */,
 				4C8F307920ED670D00D28E14 /* BoutonCodabook.swift in Sources */,
+				4C25BDE220F79C95003FEE0F /* Utilisateur.swift in Sources */,
 				4C25BDDA20F6457D003FEE0F /* Refs.swift in Sources */,
 				4C25BDE020F78A65003FEE0F /* TabBar.swift in Sources */,
 				4C25BDD520F63EA9003FEE0F /* Alerte.swift in Sources */,

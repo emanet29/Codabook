@@ -15,7 +15,6 @@ class ConnectionController: UIViewController {
     @IBOutlet weak var mailTF: UITextField!
     @IBOutlet weak var mdpTF: UITextField!
     @IBOutlet weak var connectionBouton: BoutonCodabook!
-    
     @IBOutlet weak var pasDeCompteLabel: UILabel!
     
     
@@ -57,7 +56,7 @@ class ConnectionController: UIViewController {
     func completion(_ user: AuthDataResult?, _ error: Error?) {
         if let erreur = error {
             let nsErreur = erreur as NSError
-            if nsErreur.code == 17011 {
+            if nsErreur.code == 17011 {// l'utilisateur n'existe pas
                 // creer utilisateur
                 Auth.auth().createUser(withEmail: mailTF.text!, password: mdpTF.text!, completion: completion(_:_:))
             } else {
@@ -65,6 +64,7 @@ class ConnectionController: UIViewController {
                 
             }
             
+            // l'utilisateur existe...
             if let utilisateur = user?.user {
                 verifierUtilisateur(id: utilisateur.uid)
             }
@@ -78,10 +78,11 @@ class ConnectionController: UIViewController {
         referenceFirebase.observe(.value) { (snapshot) in
             if snapshot.exists() {
                 // Passer a l'app
-                
+                self.performSegue(withIdentifier: SEGUE_ID, sender: nil)
                 
             } else {
-                 self.finalisation()
+                // manque nom/prenom
+                self.finalisation()
             }
         }
     }

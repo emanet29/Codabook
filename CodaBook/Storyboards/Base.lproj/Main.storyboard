@@ -101,14 +101,107 @@
                         <outlet property="mdpTF" destination="81x-zF-N7l" id="OlS-6n-kEL"/>
                         <outlet property="pasDeCompteLabel" destination="OoA-JC-cw7" id="VeU-Eg-Xvp"/>
                         <outlet property="titreLabel" destination="cUI-3P-fJq" id="Sqw-if-p3Q"/>
+                        <segue destination="IkU-5W-TFA" kind="show" identifier="VersApp" id="Wix-Gp-RYY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="31.934032983508249"/>
+            <point key="canvasLocation" x="-95" y="32"/>
+        </scene>
+        <!--Profil Controller-->
+        <scene sceneID="FAb-RK-qnm">
+            <objects>
+                <viewController id="f3f-Py-BW3" customClass="ProfilController" customModule="CodaBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MwK-fo-ofw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.17254901959999999" green="0.58039215690000001" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="JLf-2n-sZJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SdJ-NK-bLZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MZa-6w-1cx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2576.8000000000002" y="386.35682158920542"/>
+        </scene>
+        <!--Fil Controller-->
+        <scene sceneID="4SD-QI-wID">
+            <objects>
+                <viewController id="pBb-nR-Dm7" customClass="FilController" customModule="CodaBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e2k-FE-Iul">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Dvu-9h-qpA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YG2-w9-PdA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="11w-Qf-W14" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2576.8000000000002" y="-392.65367316341832"/>
+        </scene>
+        <!--Tab Bar-->
+        <scene sceneID="rI2-8o-9SC">
+            <objects>
+                <tabBarController id="IkU-5W-TFA" customClass="TabBar" customModule="CodaBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zl9-cp-whZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ohe-h4-ylA" kind="relationship" relationship="viewControllers" id="WAx-8U-uqW"/>
+                        <segue destination="tD5-bK-agf" kind="relationship" relationship="viewControllers" id="rLk-MC-nri"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ns9-7e-wvr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="769" y="32"/>
+        </scene>
+        <!--profil-->
+        <scene sceneID="sEu-Su-jZ2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tD5-bK-agf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="profil" image="Profile" id="IIf-o8-3Vb"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Nik-vs-xGo">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.17254901959999999" green="0.58039215690000001" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="f3f-Py-BW3" kind="relationship" relationship="rootViewController" id="wyb-gV-iqK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BMY-7n-L12" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1637.5999999999999" y="386.35682158920542"/>
+        </scene>
+        <!--fil d'actualité-->
+        <scene sceneID="soJ-FB-sOX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ohe-h4-ylA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="fil d'actualité" image="fil" id="beH-Mg-eaK"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Sy4-cf-DNc">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.17254901959999999" green="0.58039215690000001" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pBb-nR-Dm7" kind="relationship" relationship="rootViewController" id="ptc-sc-D6P"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ix-5y-Y5S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1637.5999999999999" y="-392.65367316341832"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Profile" width="20" height="21"/>
         <image name="codabook_logo" width="482" height="376"/>
+        <image name="fil" width="24" height="24"/>
     </resources>
 </document>

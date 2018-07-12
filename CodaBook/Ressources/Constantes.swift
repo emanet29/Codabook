@@ -15,5 +15,9 @@ let ERREUR = "Erreur"
 let ADRESSE_VIDE = "Le champs adresse mail est vide"
 let MDP_VIDE = "Le champs mot de passe est vide"
 let OK = "OK"
-
-
+let ANNULER = "Annuler"
+let UTILISATEUR = "utilisateur"
+let FINALISER = "Finaliser l'inscription"
+let DERNIER_PAS = "C'est le dernier pas avant d'entrer dans l'application"
+let NOM = "Nom"
+let PRENOM = "Prénom"

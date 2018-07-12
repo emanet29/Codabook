@@ -34,10 +34,7 @@ class ConnectionController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let id = Auth.auth().currentUser?.uid {
-            // Vérifier si utilisateur dans BDD
-            // Passer à l'app
-            
-            
+            verifierUtilisateur(id: id)
             
         } else {
             cacher(false)
@@ -57,12 +54,53 @@ class ConnectionController: UIViewController {
         view.endEditing(true)
     }
     
+    func completion(_ user: AuthDataResult?, _ error: Error?) {
+        if let erreur = error {
+            let nsErreur = erreur as NSError
+            if nsErreur.code == 17011 {
+                // creer utilisateur
+                Auth.auth().createUser(withEmail: mailTF.text!, password: mdpTF.text!, completion: completion(_:_:))
+            } else {
+                Alerte.montrer.erreur(message: nsErreur.convertirErreurFirebaseEnString(), controller: self)
+                
+            }
+            
+            if let utilisateur = user?.user {
+                verifierUtilisateur(id: utilisateur.uid)
+            }
+            
+            
+        }
+    }
+    
+    func verifierUtilisateur(id: String) {
+        let referenceFirebase = Refs.obtenir.baseUtilisateurs.child(id)
+        referenceFirebase.observe(.value) { (snapshot) in
+            if snapshot.exists() {
+                // Passer a l'app
+                
+                
+            } else {
+                 self.finalisation()
+            }
+        }
+    }
+    
+    func finalisation() {
+        Alerte.montrer.alerteTF(titre: FINALISER, message: DERNIER_PAS, array: [PRENOM, NOM], controller: self, completion: { (success) -> (Void) in
+            if let bool = success, bool == true {
+                // Passer à l'app
+            } else {
+                self.finalisation()
+            }
+        })
+    }
+    
     @IBAction func SeConnecterAction(_ sender: Any) {
         self.view.endEditing(true)
         if let adresse = mailTF.text, adresse != "" {
             if let mdp = mdpTF.text, mdp != "" {
-                
-                
+                Auth.auth().signIn(withEmail: adresse, password: mdp, completion: completion(_:_:))
             } else {
                 Alerte.montrer.erreur(message: MDP_VIDE, controller: self)
             }

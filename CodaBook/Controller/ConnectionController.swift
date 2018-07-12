@@ -34,8 +34,8 @@ class ConnectionController: UIViewController {
         super.viewDidAppear(animated)
         if let id = Auth.auth().currentUser?.uid {
             verifierUtilisateur(id: id)
-            
         } else {
+            // on montre les champs pour se connecter
             cacher(false)
             
         }
@@ -56,22 +56,23 @@ class ConnectionController: UIViewController {
     func completion(_ user: AuthDataResult?, _ error: Error?) {
         if let erreur = error {
             let nsErreur = erreur as NSError
+            
             if nsErreur.code == 17011 {// l'utilisateur n'existe pas
                 // creer utilisateur
                 Auth.auth().createUser(withEmail: mailTF.text!, password: mdpTF.text!, completion: completion(_:_:))
             } else {
                 Alerte.montrer.erreur(message: nsErreur.convertirErreurFirebaseEnString(), controller: self)
-                
             }
-            
-            // l'utilisateur existe...
-            if let utilisateur = user?.user {
-                verifierUtilisateur(id: utilisateur.uid)
-            }
-            
-            
+        }
+        
+        // l'utilisateur existe...
+        if let utilisateur = user?.user {
+            verifierUtilisateur(id: utilisateur.uid)
         }
     }
+    
+    
+    
     
     func verifierUtilisateur(id: String) {
         let referenceFirebase = Refs.obtenir.baseUtilisateurs.child(id)
@@ -91,6 +92,7 @@ class ConnectionController: UIViewController {
         Alerte.montrer.alerteTF(titre: FINALISER, message: DERNIER_PAS, array: [PRENOM, NOM], controller: self, completion: { (success) -> (Void) in
             if let bool = success, bool == true {
                 // Passer à l'app
+                self.performSegue(withIdentifier: SEGUE_ID, sender: nil)
             } else {
                 self.finalisation()
             }

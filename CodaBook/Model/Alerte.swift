@@ -76,6 +76,26 @@ class Alerte {
         
     }
     
-    
+    func photo(imagePicker: UIImagePickerController, controller: UIViewController) {
+        let alerte = UIAlertController(title: PRENDRE_PHOTO, message: MEDIA, preferredStyle: .alert)
+        let appareil = UIAlertAction(title: APPAREIL, style: .default) { (action) in
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                imagePicker.sourceType = .camera
+                controller.present(imagePicker,animated: true,completion: nil)
+            }
+        }
+        
+        let librairie = UIAlertAction(title: LIBRAIRIE, style: .default) { (action) in
+            imagePicker.sourceType = .photoLibrary
+            controller.present(imagePicker, animated: true, completion: nil)
+        }
+        
+        let annuler = UIAlertAction(title: ANNULER, style: .cancel, handler: nil)
+        alerte.addAction(appareil)
+        alerte.addAction(librairie)
+        alerte.addAction(annuler)
+        controller.present(alerte, animated: true, completion: nil)
+        
+    }
     
 }

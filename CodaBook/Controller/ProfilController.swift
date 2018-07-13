@@ -41,8 +41,18 @@ class ProfilController: UIViewController, UIImagePickerControllerDelegate, UINav
         } else if let original = info[UIImagePickerControllerOriginalImage] as? UIImage {
             image = original
         }
+        picker.dismiss(animated: true, completion: nil)
         guard image != nil, let data = UIImageJPEGRepresentation(image!, 0.2) else { return }
-        
+        guard let id = Auth.auth().currentUser?.uid else { return }
+        let ref = Refs.obtenir.basePhotosDeProfil.child(id)
+        ref.putData(data, metadata: nil) { (metadata, error) in
+            ref.downloadURL(completion: { (url, error) in
+                if let urlString = url?.absoluteString {
+                    let userRef = Refs.obtenir.baseUtilisateurs.child(id)
+                    userRef.updateChildValues([IMAGEURL: urlString])
+                }
+            })
+        }
         
     }
     

@@ -75,16 +75,36 @@ class PostController: UIViewController, UITextViewDelegate, UIImagePickerControl
                 DATE_POST: Date().timeIntervalSince1970 as AnyObject,
                 USER_ID: id as AnyObject
             ]
-            if photoDuPost.image != nil {
+            if let image = photoDuPost.image, let data = UIImageJPEGRepresentation(image, 0.3) {
+                
                 // Envoyer d'abord image
+                let unique = UUID().uuidString
+                let ref = Refs.obtenir.basePhotosDuPost.child(id).child(unique)
+                ref.putData(data, metadata: nil) { (metadata, error) in
+                    ref.downloadURL(completion: { (url, error) in
+                        if let string = url?.absoluteString {
+                            dict[IMAGEURL] = string as AnyObject
+                            self.envoyerPostSurFirebase(dict: dict)
+                        }
+                    })
+                }
                 
             } else {
                 // Envoyer dans Firebase
+                envoyerPostSurFirebase(dict: dict)
             }
         }
         
         
         
     }
+    
+    func envoyerPostSurFirebase (dict: [String: AnyObject]) {
+        let ref = Refs.obtenir.basePost.childByAutoId()
+        ref.updateChildValues(dict)
+        navigationController?.popViewController(animated: true)
+        
+    }
+    
     
 }

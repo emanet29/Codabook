@@ -35,6 +35,7 @@ class FilController: UIViewController, UITableViewDelegate, UITableViewDataSourc
                             if let date = postDict[DATE_POST] as? Double, let texte = postDict[TEXTE] as? String {
                                 let nouveauPost = Post(id: snapshot.key, date: date, utilisateur: utilisateur, texte: texte, imageUrl: postDict[IMAGEURL] as? String)
                                 self.posts.append(nouveauPost)
+                                self.posts = self.posts.sorted(by: { $0.date > $1.date})
                                 self.tableView.reloadData()
                             }
                             

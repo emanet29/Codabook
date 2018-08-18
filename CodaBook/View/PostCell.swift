@@ -64,6 +64,12 @@ class PostCell: UITableViewCell {
             
         }
         
+        if self.post.likes.count == 0 {
+            nombreDeLike.text = ""
+        } else {
+            nombreDeLike.text = String(self.post.likes.count) + " " + LIKES
+        }
+        
         observerLikes()
     }
     
@@ -71,7 +77,7 @@ class PostCell: UITableViewCell {
         let ref = Refs.obtenir.basePost.child(self.post.id)
         ref.observe(.childAdded) { (snap) in
             // Ajouté
-            if let array = snap.value as? NSArray, let arrayString = array as? [String] {
+            if let array = snap.value as? NSArray, let arrayString = array as? [String], arrayString != self.post.likes {
                 self.post.maj(likes: arrayString)
                 self.miseEnPlace(post: self.post)
             }

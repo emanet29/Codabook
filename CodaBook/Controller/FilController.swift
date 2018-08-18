@@ -21,6 +21,7 @@ class FilController: UIViewController, UITableViewDelegate, UITableViewDataSourc
         tableView.delegate = self
         tableView.dataSource = self
         observerPosts()
+        title = FIL
     }
     
     func observerPosts() {

@@ -27,7 +27,7 @@ class PostCell: UITableViewCell {
     func miseEnPlace(post: Post) {
         self.post = post
         photoDeProfil.telecharger(self.post.utilisateur.imageUrl)
-        nomEtPrenom.text = self.post.utilisateur.prenom + "  "+ self.post.utilisateur.nom
+        nomEtPrenom.text = self.post.utilisateur.prenom + "  " + self.post.utilisateur.nom
         imageDuPost.telecharger(self.post.imageUrl)
         texteDuPost.text = self.post.texte
         

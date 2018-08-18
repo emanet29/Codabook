@@ -28,6 +28,7 @@
 		4C8F307C20ED677300D28E14 /* Constantes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8F307B20ED677300D28E14 /* Constantes.swift */; };
 		4C8F307E20ED67EA00D28E14 /* LayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8F307D20ED67EA00D28E14 /* LayerExtension.swift */; };
 		4C94091021273723009F0916 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C94090F21273723009F0916 /* Post.swift */; };
+		4C940912212840D7009F0916 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C940911212840D7009F0916 /* PostCell.swift */; };
 		E28C27013F8918A3A45016D3 /* Pods_CodaBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1854727CF4BB3681465924 /* Pods_CodaBook.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		4C8F307B20ED677300D28E14 /* Constantes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constantes.swift; sourceTree = "<group>"; };
 		4C8F307D20ED67EA00D28E14 /* LayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerExtension.swift; sourceTree = "<group>"; };
 		4C94090F21273723009F0916 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		4C940911212840D7009F0916 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		6BC7B777747874AC3B29FF71 /* Pods-CodaBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodaBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodaBook/Pods-CodaBook.release.xcconfig"; sourceTree = "<group>"; };
 		7B1854727CF4BB3681465924 /* Pods_CodaBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodaBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2C638C902C4643BB5FCED90 /* Pods-CodaBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodaBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodaBook/Pods-CodaBook.debug.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				4C25BDE320F7A0FB003FEE0F /* ImageRonde.swift */,
 				4C25BDE520F7A1AC003FEE0F /* ExtensionUIImageView.swift */,
 				4C25BDE720F8D983003FEE0F /* VueCodabook.swift */,
+				4C940911212840D7009F0916 /* PostCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				4C25BDE620F7A1AC003FEE0F /* ExtensionUIImageView.swift in Sources */,
 				4C61214720ED5BAF0089B4E8 /* AppDelegate.swift in Sources */,
 				4C94091021273723009F0916 /* Post.swift in Sources */,
+				4C940912212840D7009F0916 /* PostCell.swift in Sources */,
 				4C25BDDE20F789F0003FEE0F /* FilController.swift in Sources */,
 				4C8F307C20ED677300D28E14 /* Constantes.swift in Sources */,
 				4C25BDE420F7A0FB003FEE0F /* ImageRonde.swift in Sources */,
